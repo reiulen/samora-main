@@ -11,7 +11,7 @@ async function getData() {
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    return [];
   }
 
   return res.json();
@@ -19,34 +19,6 @@ async function getData() {
 
 export default async function LatesNews() {
   const { data } = await getData();
-  function Article() {
-    return (
-      <div className="mb-5 text-[#000371]">
-        <Image
-          src="/blog-img.png"
-          width={1000}
-          height={1000}
-          alt="gambar"
-          className="w-full"
-        />
-        <h2 className="text-xl my-2 font-Gilroy font-bold">
-          Samora Berbagi 2020 Peduli Masyarakat Terdampak Covid 19
-        </h2>
-        <p className="mb-3 text-sm font-Gilroy font-normal">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
-          praesentium iure incidunt ipsam quaerat eveniet quae quas explicabo
-          eligendi quis!
-        </p>
-        <Link
-          href="#"
-          className="flex items-center gap-1 font-Gilroy font-bold lg:justify-end lg:text-base"
-        >
-          <span>Read More</span>
-          <IoIosArrowDropright size={20} />
-        </Link>
-      </div>
-    );
-  }
 
   return (
     <section className="pt-10">
@@ -54,10 +26,33 @@ export default async function LatesNews() {
       <h2 className="font-Gilroy font-bold text-4xl text-biru py-3">
         Lates News
       </h2>
-      <div className="mt-3 grid grid-cols-2 gap-5">
-        {data.map((d: any) => (
-          <Article />
-        ))}
+      <div className="mt-3 grid grid-cols-2 gap-5 overflow-hidden">
+        {data ? (
+          data.map((d: any) => (
+            <div className="mb-5 text-[#000371]">
+              <Image
+                src={d.thumbnail}
+                width={1000}
+                height={1000}
+                alt="gambar"
+                className="w-full h-[300px]"
+              />
+              <h2 className="text-xl my-2 font-Gilroy font-bold">{d.title}</h2>
+              <p className="mb-3 text-sm font-Gilroy font-normal">
+                {d.content}
+              </p>
+              <Link
+                href="#"
+                className="flex items-center gap-1 font-Gilroy font-bold lg:justify-end lg:text-base"
+              >
+                <span>Read More</span>
+                <IoIosArrowDropright size={20} />
+              </Link>
+            </div>
+          ))
+        ) : (
+          <p>Gagal Mengambil data</p>
+        )}
       </div>
     </section>
   );

@@ -11,7 +11,7 @@ async function getData() {
 
   if (!res.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
+    return [];
   }
 
   return res.json();
@@ -29,7 +29,7 @@ export default async function CareerInfo() {
         <p className="w-8/12 font-Gilroy-extrabold lg:text-lg">POSISI</p>
         <p className="font-Gilroy-extrabold lg:text-lg">LOKASI</p>
       </div>
-      {data.map((item: any, index: number) => (
+      {data ? data.map((item: any, index: number) => (
         <div
           key={index}
           className="flex items-center py-2 px-2 border-b-2 border-yellow-500"
@@ -41,7 +41,7 @@ export default async function CareerInfo() {
             {item.location}
           </p>
         </div>
-      ))}
+      )): <p>Gagal Mengambil data</p>}
       <Link
         href="#"
         className="flex items-center gap-1 justify-end lg:text-sm mr-3 mt-3"
