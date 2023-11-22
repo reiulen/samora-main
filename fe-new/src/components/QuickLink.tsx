@@ -32,7 +32,7 @@ export default async function QuickLink() {
             key={item.id}
             href={item.url}
             target={item.target === 0 ? "_self" : "_blank"}
-            className="flex flex-col gap-1"
+            className="flex flex-col gap-1 items-center"
           >
             <Image
               width={100}
@@ -42,7 +42,7 @@ export default async function QuickLink() {
               src={item.icon}
               className="w-16"
             />
-            <p className="font-bold text-base md:text-xs lg:text-sm text-[#000371] leading-3 font-Gilroy-extrabold">
+            <p className="font-bold text-base md:text-xs lg:text-sm text-[#000371] leading-3 font-Gilroy-extrabold text-center">
               {item.nama}
             </p>
           </Link>

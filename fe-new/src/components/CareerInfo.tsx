@@ -29,21 +29,26 @@ export default async function CareerInfo() {
         <p className="w-8/12 font-Gilroy-extrabold lg:text-lg">POSISI</p>
         <p className="font-Gilroy-extrabold lg:text-lg">LOKASI</p>
       </div>
-      {data ? data.map((item: any, index: number) => (
-        <div
-          key={index}
-          className="flex items-center py-2 px-2 border-b-2 border-yellow-500"
-        >
-          <p className="w-8/12 font-Gilroy font-bold lg:text-lg text-[#000371]">
-            {item.title}
-          </p>
-          <p className="lg:text-base font-Gilroy font-normal text-[#000371]">
-            {item.location}
-          </p>
-        </div>
-      )): <p>Gagal Mengambil data</p>}
+      {data ? (
+        data.map((item: any, index: number) => (
+          <div
+            key={index}
+            className="flex items-center py-2 px-2 border-b-2 border-yellow-500"
+          >
+            <p className="w-8/12 font-Gilroy font-bold lg:text-lg text-[#000371]">
+              {item.title}
+            </p>
+            <p className="lg:text-base font-Gilroy font-normal text-[#000371]">
+              {item.location}
+            </p>
+          </div>
+        ))
+      ) : (
+        <p>Gagal Mengambil data</p>
+      )}
       <Link
-        href="#"
+      target='_blank'
+        href="https://samoragroup.prevueaps.com/jobs/"
         className="flex items-center gap-1 justify-end lg:text-sm mr-3 mt-3"
       >
         <span className="font-Gilroy font-bold text-[#000371]">Read More</span>

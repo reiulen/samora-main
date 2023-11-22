@@ -10,7 +10,7 @@ export default function page() {
     <section className="pt-5">
       <Shape size="w-2/12" />
       <h2 className="font-Gilroy font-bold text-3xl text-biru py-3">
-        CONTINUOUS IMPROVMENT
+        CONTINUOUS IMPROVEMENT
       </h2>
       <p className="my-20 ps-5 pe-10 text-3xl font-Gilroy font-bold text-biru">
         "Performance management is the continuous process of improving

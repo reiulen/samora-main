@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import useSWR from "swr";
 
 async function getData() {
   const res = await fetch("http://127.0.0.1:8000/api/headline", {

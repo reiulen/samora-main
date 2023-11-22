@@ -72,10 +72,10 @@ class NewsController extends Controller
             $news->content = $request->content_edit;
             $news->published = $request->published_edit === "true" ? true : false;
             if ($request->has('thumbnail_edit')) {
-                $image = $request->file('image_edit');
+                $image = $request->file('thumbnail_edit');
                 $image->storeAs('public/news/', $image->hashName());
                 Storage::delete('public/news/'.$news->thuhmbnail);
-                $news->thuhmbnail = $image->hashName();
+                $news->thumbnail = $image->hashName();
             }
             $news->save();
             DB::commit();

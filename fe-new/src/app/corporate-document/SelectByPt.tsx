@@ -13,6 +13,9 @@ export default function SelectByPt({
   const [openPt, setOpenPt] = useState(false);
   const [userSelect, setUserSelect] = useState("CORPORATE DOCUMENT");
 
+  // Menghapus duplikat dari array
+  const uniqueDataPt = Array.from(new Set(dataPt));
+
   const handleChange = (select: string): void => {
     setUserSelect(select);
     setOpenPt(false);
@@ -38,7 +41,7 @@ export default function SelectByPt({
           >
             All
           </button>
-          {dataPt.map((company, index) => (
+          {uniqueDataPt.map((company, index) => (
             <button
               onClick={() => handleChange(company)}
               className="text-left text-biru hover:bg-slate-200 text-xl font-Gilroy font-bold"

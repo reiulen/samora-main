@@ -17,10 +17,10 @@ export default function CommunicationFile({ file }: CommunicationFileProps) {
   return (
     <section className="flex flex-row justify-start bg-white border-b-4 pb-1 border-yellow-400 w-11/12 px-3">
       <h2 className="font-Gilroy font-bold text-lg text-biru py-3 w-4/12">
-        {file ? file.title.toUpperCase() : "Jenis File"}
+        {file ? file.type.toUpperCase() : "Jenis File"}
       </h2>
       <h2 className="font-Gilroy font-bold text-lg text-biru py-3 w-6/12">
-        {file ? file.type : "Nama File"}
+        {file ? file.title.toUpperCase() : "Nama File"}
       </h2>
       <div className="flex flow-row items-center py-2 justify-between w-2/12">
         <Link

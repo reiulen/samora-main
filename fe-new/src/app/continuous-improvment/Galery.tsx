@@ -1,16 +1,20 @@
-'use client'
-import Shape from '@/components/Shape'
-import React, { useEffect, useState } from 'react'
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import Image from 'next/image';
+"use client";
+import Shape from "@/components/Shape";
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import Image from "next/image";
 
 export default function Galery() {
   const [data, setData] = useState([]);
+
+  const extractVideoId = (url: any) => {
+    const match = url.match(
+      /(?:youtu\.be\/|youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/|youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=))([^"'&?\/\s]{11})/
+    );
+    return match && match[1];
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +36,7 @@ export default function Galery() {
 
     fetchData();
   }, []);
+
   return (
     <section className="pt-10">
       <Shape size="w-1/12" />
@@ -50,10 +55,14 @@ export default function Galery() {
                     src={`http://127.0.0.1:8000/storage/gallery/${d.url}`}
                     width={1000}
                     height={1000}
+                    className="h-full"
                   />
                 ) : (
                   <iframe
-                    src={d.url}
+                    src={`https://www.youtube.com/embed/${extractVideoId(
+                      d.url
+                    )}`}
+                    className="h-full"
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

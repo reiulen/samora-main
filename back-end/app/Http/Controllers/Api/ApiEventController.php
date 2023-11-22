@@ -12,7 +12,7 @@ class ApiEventController extends Controller
 {
     public function index()
     {
-        $data = Event::all();
+        $data = Event::whereMonth('date', Carbon::now()->month)->latest('date')->get();
         return response()->json([
             'status' => 'success',
             'data' => EventResource::collection($data)
