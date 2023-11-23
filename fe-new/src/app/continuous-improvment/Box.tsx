@@ -10,7 +10,7 @@ export default function Box(p: {nama: string, jabatan: string, image: string}) {
       <p className="font-Gilroy font-bold text-biru text-xl pt-3">
         {p.nama}
       </p>
-      <span className="font-Gilroy font-normal ">{p.jabatan}</span>
+      <span className="font-Gilroy font-medium text-biru">{p.jabatan}</span>
     </div>
   );
 }

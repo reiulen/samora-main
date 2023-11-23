@@ -18,7 +18,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   const { data } = await getData(params.slug);
   return (
     <div className="pt-10">
-      <h1 className="text-2xl font-bold mb-4">{data.title}</h1>
+      <h1 className="text-2xl mb-4 font-Gilroy font-bold text-biru">{data.title}</h1>
       <Image
         src={data.thumbnail}
         width={1000}
@@ -27,7 +27,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         className="w-10/12 h-[400px]"
       />
       <div
-        className="w-10/12 text-xl mt-5"
+        className="w-10/12 text-xl mt-5 text-biru font-Gilroy font-normal"
         dangerouslySetInnerHTML={{ __html: data.content }}
       />
     </div>

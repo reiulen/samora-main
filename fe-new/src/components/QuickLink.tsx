@@ -1,8 +1,8 @@
-import React from 'react'
-import Image from 'next/image';
-import Link from 'next/link';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
-import Shape from './Shape';
+import Shape from "./Shape";
 
 async function getData() {
   const res = await fetch("http://127.0.0.1:8000/api/quick-link", {
@@ -20,17 +20,18 @@ async function getData() {
 }
 
 export default async function QuickLink() {
-
-   const { data } = await getData();
+  const { data } = await getData();
   return (
     <section>
       <Shape />
-      <h2 className="font-Gilroy font-bold text-xl text-biru py-2">QUICK LINK</h2>
+      <h2 className="font-Gilroy font-bold text-xl text-biru py-2">
+        QUICK LINK
+      </h2>
       <div className="grid grid-cols-3 gap-1 pt-3">
         {data.map((item: any) => (
           <Link
             key={item.id}
-            href={item.url}
+            href={`http://localhost:3000/${item.url}`}
             target={item.target === 0 ? "_self" : "_blank"}
             className="flex flex-col gap-1 items-center"
           >
