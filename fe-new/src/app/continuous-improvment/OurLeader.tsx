@@ -3,7 +3,7 @@ import React from 'react'
 import Box from './Box';
 
 async function getData() {
-  const res = await fetch("http://127.0.0.1:8000/api/leader");
+  const res = await fetch("http://127.0.0.1:8000/api/leader", {cache: "no-cache"});
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
