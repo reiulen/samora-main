@@ -12,6 +12,8 @@ export default function Magazine() {
       </h2>
       <div className='pt-5'>
         <Image
+            height={100}
+            width={100}
             src={magazine}
             alt='magazine'
             className='w-full'

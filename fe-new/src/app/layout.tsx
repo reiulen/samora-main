@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
+import ReactQueryProvider from "@/providers/ReactQueryProvider";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -43,12 +44,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${gilroy.variable} px-[3%]`}>
-        <Navbar />
-        <section className="flex flex-col md:flex-row gap-5">
-          <main className="md:w-8/12 lg:w-9/12">{children}</main>
-          <Sidebar />
-        </section>
-        <Footer />
+        <ReactQueryProvider>
+          <Navbar />
+          <section className="flex flex-col md:flex-row gap-5">
+            <main className="md:w-8/12 lg:w-9/12">{children}</main>
+            <Sidebar />
+          </section>
+          <Footer />
+        </ReactQueryProvider>
       </body>
     </html>
   );

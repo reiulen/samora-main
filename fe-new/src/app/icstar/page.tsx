@@ -4,7 +4,7 @@ import React from "react";
 export default function page() {
   return (
     <section>
-      <IcstarSectionMain />
+      {/* <IcstarSectionMain /> */}
     </section>
   );
 }

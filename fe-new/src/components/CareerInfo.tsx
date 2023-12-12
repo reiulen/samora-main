@@ -1,27 +1,27 @@
 import React from 'react'
-import Shape from './Shape'
+// import Shape from './Shape'
 
-import { IoIosArrowDropright } from "react-icons/io";
-import Link from "next/link";
+// import { IoIosArrowDropright } from "react-icons/io";
+// import Link from "next/link";
 
-async function getData() {
-  const res = await fetch("http://127.0.0.1:8000/api/career", {
-    cache: "no-cache",
-  });
+// async function getData() {
+//   const res = await fetch("http://127.0.0.1:8000/api/career", {
+//     cache: "no-cache",
+//   });
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    return [];
-  }
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     return [];
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 export default async function CareerInfo() {
-  const { data } = await getData();
+  // const { data } = await getData();
   return (
     <section className="w-5/12">
-      <Shape size="w-2/12" />
+      {/* <Shape size="w-2/12" />
       <h2 className="font-Gilroy font-bold text-2xl text-biru py-3">
         CAREER INFO
       </h2>
@@ -53,7 +53,7 @@ export default async function CareerInfo() {
       >
         <span className="font-Gilroy font-bold text-[#000371]">Read More</span>
         <IoIosArrowDropright size={20} color="#000371" />
-      </Link>
+      </Link> */}
     </section>
   );
 }

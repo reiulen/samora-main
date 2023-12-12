@@ -1,14 +1,14 @@
-import Shape from "@/components/Shape";
+// import Shape from "@/components/Shape";
 import React from "react";
-import OurLeader from "./OurLeader";
-import Tabs from "./Tabs";
-import PengukuranImprovment from "./PengukuranImprovment";
-import Galery from "./Galery";
+// import OurLeader from "./OurLeader";
+// import Tabs from "./Tabs";
+// import PengukuranImprovment from "./PengukuranImprovment";
+// import Galery from "./Galery";
 
 export default function page() {
   return (
     <section className="pt-5">
-      <Shape size="w-2/12" />
+      {/* <Shape size="w-2/12" />
       <h2 className="font-Gilroy font-bold text-3xl text-biru py-3">
         CONTINUOUS IMPROVEMENT
       </h2>
@@ -23,7 +23,7 @@ export default function page() {
       <OurLeader />
       <Tabs />
       <PengukuranImprovment />
-      <Galery />
+      <Galery /> */}
     </section>
   );
 }

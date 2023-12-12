@@ -1,14 +1,14 @@
-import Shape from "@/components/Shape";
-import Image from "next/image";
+// import Shape from "@/components/Shape";
+// import Image from "next/image";
 import React from "react";
-import she_cover from "./../../assets/SHE-COVER.png";
-import PurposeTab from "@/app/she/PurposeTab";
-import Site from "@/app/she/Site";
+// import she_cover from "./../../assets/SHE-COVER.png";
+// import PurposeTab from "@/app/she/PurposeTab";
+// import Site from "@/app/she/Site";
 
 export default function page() {
   return (
     <section className="py-3">
-      <Shape size="w-2/12" />
+      {/* <Shape size="w-2/12" />
       <h2 className="text-xl text-biru lg:text-3xl font-Gilroy font-bold pt-3">
         SAFETY, HEALTY AND ENVIRONMENT
       </h2>
@@ -45,7 +45,7 @@ export default function page() {
         <PurposeTab title="SHE REGULATIONS" />
         <PurposeTab title="SHE CERTIFICATE" />
       </div>
-      <Site />
+      <Site /> */}
     </section>
   );
 }

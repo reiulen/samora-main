@@ -1,18 +1,18 @@
-import Announcement from "@/components/Announcement";
-import CareerInfo from "@/components/CareerInfo";
+// import Announcement from "@/components/Announcement";
+// import CareerInfo from "@/components/CareerInfo";
 import HomeSectionMain from "@/components/HomeSectionMain";
-import LatesNews from "@/components/LatesNews";
+// import LatesNews from "@/components/LatesNews";
 
 
 export default function Home() {
   return (
     <section>
       <HomeSectionMain />
-      <LatesNews />
+      {/* <LatesNews />
       <div className="lg:flex lg:flex-row lg:justify-between">
         <CareerInfo />
         <Announcement />
-      </div>
+      </div> */}
     </section>
   );
 }

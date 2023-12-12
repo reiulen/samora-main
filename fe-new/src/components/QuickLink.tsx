@@ -1,29 +1,29 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { BiSearch } from "react-icons/bi";
-import Shape from "./Shape";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { BiSearch } from "react-icons/bi";
+// import Shape from "./Shape";
 
-async function getData() {
-  const res = await fetch("http://127.0.0.1:8000/api/quick-link", {
-    cache: "no-store",
-  });
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
+// async function getData() {
+//   const res = await fetch("http://127.0.0.1:8000/api/quick-link", {
+//     cache: "no-store",
+//   });
+//   // The return value is *not* serialized
+//   // You can return Date, Map, Set, etc.
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     throw new Error("Failed to fetch data");
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 export default async function QuickLink() {
-  const { data } = await getData();
+  // const { data } = await getData();
   return (
     <section>
-      <Shape />
+      {/* <Shape />
       <h2 className="font-Gilroy font-bold text-xl text-biru py-2">
         QUICK LINK
       </h2>
@@ -56,7 +56,7 @@ export default async function QuickLink() {
           className="p-2 w-full border-none outline-none text-lg md:text-sm text-biru"
         />
         <BiSearch size={25} />
-      </div>
+      </div> */}
     </section>
   );
 }

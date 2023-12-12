@@ -1,29 +1,29 @@
 import React from "react";
-import Shape from "./Shape";
-import Image from "next/image";
-import Link from "next/link";
-import { IoIosArrowDropright } from "react-icons/io";
+// import Shape from "./Shape";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { IoIosArrowDropright } from "react-icons/io";
 
-async function getData() {
-  const res = await fetch("http://127.0.0.1:8000/api/news", {
-    cache: "no-cache",
-  });
+// async function getData() {
+//   const res = await fetch("http://127.0.0.1:8000/api/news", {
+//     cache: "no-cache",
+//   });
 
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    return [];
-  }
+//   if (!res.ok) {
+//     // This will activate the closest `error.js` Error Boundary
+//     return [];
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 
 export default async function LatesNews() {
-  const { data } = await getData();
+  // const { data } = await getData();
 
   return (
     <section className="pt-10">
-      <Shape size="w-1/12" />
+      {/* <Shape size="w-1/12" />
       <h2 className="font-Gilroy font-bold text-4xl text-biru py-3">
         Lates News
       </h2>
@@ -52,7 +52,7 @@ export default async function LatesNews() {
         ) : (
           <p>Gagal Mengambil data</p>
         )}
-      </div>
+      </div> */}
     </section>
   );
 }

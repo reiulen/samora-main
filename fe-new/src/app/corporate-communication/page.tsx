@@ -1,9 +1,9 @@
 'use client'
 // page.tsx
-import { useState, useEffect } from "react";
-import { IoIosArrowDropdown } from "react-icons/io";
-import CommunicationFile from "./CommunicationFile";
-import Shape from "@/components/Shape";
+// import { useState, useEffect } from "react";
+// import { IoIosArrowDropdown } from "react-icons/io";
+// import CommunicationFile from "./CommunicationFile";
+// import Shape from "@/components/Shape";
 
 interface CorporateCommunicationData {
   id: number;
@@ -12,45 +12,45 @@ interface CorporateCommunicationData {
   path: string;
 }
 
-async function getData(): Promise<{ data: CorporateCommunicationData[] }> {
-  const res = await fetch("http://127.0.0.1:8000/api/corporate-communication");
+// async function getData(): Promise<{ data: CorporateCommunicationData[] }> {
+//   const res = await fetch("http://127.0.0.1:8000/api/corporate-communication");
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 export default function Page() {
-  const [open, setOpen] = useState(false);
-  const [userSelect, setUserSelect] = useState("");
-  const [data, setData] = useState<CorporateCommunicationData[]>([]);
-  const [uniqueType, setUniqueType] = useState<string[]>([]);
+  // const [open, setOpen] = useState(false);
+  // const [userSelect, setUserSelect] = useState("");
+  // const [data, setData] = useState<CorporateCommunicationData[]>([]);
+  // const [uniqueType, setUniqueType] = useState<string[]>([]);
 
-  const handleChange = (d: string) => {
-    setUserSelect(d);
-    setOpen(false);
-  };
+  // const handleChange = (d: string) => {
+  //   setUserSelect(d);
+  //   setOpen(false);
+  // };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await getData();
-        const uniqueType = ["All", ...Array.from(new Set(result.data.map((d) => d.type)))];
-        setUniqueType(uniqueType);
-        setData(result.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const result = await getData();
+  //       const uniqueType = ["All", ...Array.from(new Set(result.data.map((d) => d.type)))];
+  //       setUniqueType(uniqueType);
+  //       setData(result.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
   return (
     <section className="pt-5">
-      <Shape size="w-2/12" />
+      {/* <Shape size="w-2/12" />
       <h2 className="font-Gilroy font-bold text-3xl text-biru py-3">
         CORPORATE COMMUNICATIONS
       </h2>
@@ -99,7 +99,7 @@ export default function Page() {
             )
             .map((file, index) => (
               <CommunicationFile key={index} file={file} />
-            ))}
+            ))} */}
     </section>
   );
 }

@@ -1,9 +1,9 @@
 "use client";
 // page.tsx
 import React, { useState, useEffect } from "react";
-import { IoIosArrowDropdown } from "react-icons/io";
-import Shape from "@/components/Shape";
-import KnowledgeFile from "./KnowledgeFile";
+// import { IoIosArrowDropdown } from "react-icons/io";
+// import Shape from "@/components/Shape";
+// import KnowledgeFile from "./KnowledgeFile";
 
 interface KnowledgeBaseData {
   id: number;
@@ -12,52 +12,52 @@ interface KnowledgeBaseData {
   path: string;
 }
 
-async function getData(): Promise<{ data: KnowledgeBaseData[] }> {
-  const res = await fetch("http://127.0.0.1:8000/api/knowledge-base");
+// async function getData(): Promise<{ data: KnowledgeBaseData[] }> {
+//   const res = await fetch("http://127.0.0.1:8000/api/knowledge-base");
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
+//   if (!res.ok) {
+//     throw new Error("Failed to fetch data");
+//   }
 
-  return res.json();
-}
+//   return res.json();
+// }
 
 export default function Page() {
-  const [open, setOpen] = useState(false);
-  const [userSelect, setUserSelect] = useState("");
-  const [data, setData] = useState<KnowledgeBaseData[]>([]);
+  // const [open, setOpen] = useState(false);
+  // const [userSelect, setUserSelect] = useState("");
+  // const [data, setData] = useState<KnowledgeBaseData[]>([]);
 
-  const handleChange = (d: string) => {
-    setUserSelect(d);
-    setOpen(false);
-  };
+  // const handleChange = (d: string) => {
+  //   setUserSelect(d);
+  //   setOpen(false);
+  // };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await getData();
-        setData(result.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const result = await getData();
+  //       setData(result.data);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     }
+  //   };
 
-    fetchData();
-  }, []);
+  //   fetchData();
+  // }, []);
 
-  // Filter data berdasarkan pilihan pengguna
-  const filteredData = userSelect
-    ? data.filter((item) => item.legal === userSelect)
-    : data;
+  // // Filter data berdasarkan pilihan pengguna
+  // const filteredData = userSelect
+  //   ? data.filter((item) => item.legal === userSelect)
+  //   : data;
 
-  const handleShowAll = () => {
-    setUserSelect(""); // Set userSelect ke string kosong untuk menampilkan semua data
-    setOpen(false);
-  };
+  // const handleShowAll = () => {
+  //   setUserSelect(""); // Set userSelect ke string kosong untuk menampilkan semua data
+  //   setOpen(false);
+  // };
 
   return (
     <section className="pt-5">
-      <Shape size="w-2/12" />
+      {/* <Shape size="w-2/12" />
       <h2 className="font-Gilroy font-bold text-3xl text-biru py-3">
         KNOWLEDGE BASE
       </h2>
@@ -107,7 +107,7 @@ export default function Page() {
       </section>
       {filteredData.map((d) => (
         <KnowledgeFile file={d} key={d.id} />
-      ))}
+      ))} */}
     </section>
   );
 }
