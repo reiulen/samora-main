@@ -13,6 +13,8 @@ use App\Http\Controllers\Api\ApiHeadlineController;
 use App\Http\Controllers\Api\ApiQuickLinkController;
 use App\Http\Controllers\Api\ApiKnowledgeBaseController;
 use App\Http\Controllers\Api\ApiCorporateCommunicationController;
+use App\Http\Controllers\LocationRoomMeetingController;
+use App\Http\Controllers\RoomMeetingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +60,7 @@ Route::get('leader', [ApiLeaderController::class, 'index']);
 
 // user
 Route::get('users', [ApiUserController::class, 'index']);
+
+Route::get('location-room-meeting', [LocationRoomMeetingController::class, 'index']);
+Route::get('room-meeting-book', [RoomMeetingController::class, 'getBookRoom']);
+Route::get('room-meeting-book/{id}', [RoomMeetingController::class, 'show']);
